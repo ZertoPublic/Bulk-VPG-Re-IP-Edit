@@ -178,7 +178,7 @@ $VMIdentifier = $_
 $GetVMSettingsURL = $baseURL+"vpgSettings/"+$VPGSettingsIdentifier+"/vms/"+$VMIdentifier
 $GetVMSettings = Invoke-RestMethod -Method Get -Uri $GetVMSettingsURL -TimeoutSec 100 -Headers $zertoSessionHeader_json -ContentType $TypeJSON
 # Getting the VM name and disk usage
-$VMNameArray = $vmListarray | where-object {$_.VmIdentifier -eq $VMIdentifier} | Select-Object *
+$VMNameArray = $vmListarray | where-object {$_.VmIdentifier -eq $VMIdentifier} | Select-Object * -first 1
 $VMName = $VMNameArray.VmName
 #------------------------------------------------------------------------------#
 # Get VM Nic settings for the current VPG

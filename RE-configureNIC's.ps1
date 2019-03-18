@@ -139,7 +139,7 @@ if ($ValidVPGSettingsIdentifier -eq $true)
 # Getting ZVR IDs for the VPG
 #------------------------------------------------------------------------------#
 $VPGSettingsURL = $baseURL+"vpgSettings/"+$VPGSettingsIdentifier
-$VPGSettings = Invoke-RestMethod -Uri $VPGSettingsURL -Headers $zertoSessionHeader -ContentType $TypeJSON
+$VPGSettings = Invoke-RestMethod -Uri $VPGSettingsURL -Headers $zertoSessionHeader_json -ContentType $TypeJSON
 # Getting recovery site ID (needed anyway for network settings)
 $VPGRecoverySiteIdentifier = $VPGSettings.Basic.RecoverySiteIdentifier
 # Getting network info
